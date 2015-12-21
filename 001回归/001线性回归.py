@@ -13,6 +13,7 @@ def loadData(fileName):
         tmp.append( float(curLine[1]) )
         xMat.append( tmp )
         yMat.append( float(curLine[2]) )
+	fr.close()
     return xMat, yMat
 
 #标准的线性回归画图
@@ -96,7 +97,7 @@ def gradientDescent2(xArr, yArr):
 
 
 if __name__ == "__main__":
-    xArr, yArr = loadData("001.txt")
+    xArr, yArr = loadData("data001.txt")
     yHat1,xMat1,yMat1,lossValue1 = standRegres(xArr, yArr)
     #drawStandRegres(yHat1, xMat1, yMat1)
     yHat2, xMat2, yMat2,lossValue2 = gradientDescent1(xArr, yArr)
